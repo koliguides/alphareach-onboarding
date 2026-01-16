@@ -4,79 +4,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Automation Onboarding | LeftClick Inspired</title>
+    <title>AlphaReach | High-Performance AI Growth</title>
     <meta name="description"
-        content="Premium AI automation onboarding experience. Start your journey into the future of business efficiency.">
+        content="AlphaReach scales fast-moving B2B companies using proprietary AI automation and intelligent consultation.">
+
+    <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;400;600;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="bg-glow"></div>
-    <div class="container landing-page">
+    <div class="bg-mesh">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+    </div>
+
+    <div class="container">
         <header>
             <div class="logo">
-                <span class="logo-icon">⚡</span>
-                <span class="logo-text">ALPHA<span>REACH</span></span>
+                ⚡ <span>ALPHAREACH</span>
             </div>
             <nav>
                 <a href="#work" class="nav-link">Work</a>
                 <a href="#services" class="nav-link">Services</a>
-                <a href="#onboarding" class="cta-nav">Get Started</a>
+                <a href="#onboarding" class="btn-nav">Get Started</a>
             </nav>
         </header>
 
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <h1 class="hero-title">The definitive AI growth partner for <span class="gradient-text">fast-moving B2B
-                    companies.</span></h1>
-            <p class="hero-subtitle">We build proprietary, AI-driven consulting stacks that drive revenue and solve
-                practical bottlenecks—not theoretical ones.</p>
-            <div class="hero-actions">
-                <a href="#onboarding" class="btn-primary">Start Onboarding</a>
-                <a href="#work" class="btn-secondary">View Case Studies</a>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-tag">AI-Native Growth Partner</div>
+            <h1 class="hero-title">
+                Scale your agency
+                <span>with silicon speed.</span>
+            </h1>
+            <p class="hero-p">
+                We replace fragmented manual workflows with proprietary, AI-driven consulting stacks. Fast-moving B2B
+                companies only.
+            </p>
+            <div class="hero-btns">
+                <a href="#onboarding" class="btn-p">Start Onboarding</a>
+                <a href="#work" class="nav-link" style="display:flex; align-items:center;">View Case Studies &rarr;</a>
             </div>
         </section>
 
-        <!-- Metrics Section -->
-        <section id="work" class="metrics-section">
-            <div class="metric-card">
-                <h2>$10M+</h2>
-                <p>Generated for clients</p>
+        <!-- Bento Services -->
+        <section id="services" class="bento-grid">
+            <div class="bento-card large">
+                <span class="card-icon">🧠</span>
+                <h3>Generative Workflows</h3>
+                <p>Advanced LLM chains that don't just write copy—they execute entire business processes autonomously.
+                </p>
             </div>
-            <div class="metric-card">
-                <h2>5000+</h2>
-                <p>Hours of manual work saved</p>
+            <div class="bento-card">
+                <span class="card-icon">🏗️</span>
+                <h3>Custom Models</h3>
+                <p>Fine-tuned architectures trained on your unique data.</p>
             </div>
-            <div class="metric-card">
-                <h2>2020</h2>
-                <p>AI-native since day one</p>
+            <div class="bento-card tall">
+                <span class="card-icon">🤖</span>
+                <h3>AI Agents</h3>
+                <p>Autonomous agents that handle project management, hiring systems, and sales administration 24/7
+                    without fatigue.</p>
+            </div>
+            <div class="bento-card">
+                <span class="card-icon">📈</span>
+                <h3>Alpha Stack</h3>
+                <p>Our proprietary framework for B2B performance.</p>
+            </div>
+            <div class="bento-card large">
+                <span class="card-icon">📨</span>
+                <h3>Automated Outreach</h3>
+                <p>High-deliverability, AI-personalized outreach systems that generate qualified meetings on autopilot.
+                </p>
             </div>
         </section>
 
-        <!-- Main Onboarding Section (The Bot) -->
+        <!-- Chat Experience -->
         <section id="onboarding" class="onboarding-section">
-            <div class="section-badge">INTEGRATED ASSESSMENT</div>
-            <h2 class="section-title">Initialize Your <span class="gradient-text">Automation Audit</span></h2>
-            <p class="section-desc">Interact with our AI Architect below to generate your custom scaling roadmap.</p>
+            <div class="section-header">
+                <h2>Initialize Your Audit.</h2>
+                <p class="text-mid">Talk to our AI Architect to map your 12-month automation roadmap.</p>
+            </div>
 
             <div id="chat-wrapper">
                 <div id="chat-container">
                     <div id="chat-messages">
-                        <!-- Messages will be injected here -->
+                        <!-- Messages Injected by script.js -->
                     </div>
                 </div>
 
                 <div id="input-area">
                     <div class="input-wrapper">
-                        <input type="text" id="user-input" placeholder="Type your response..." autocomplete="off">
+                        <input type="text" id="user-input" placeholder="Enter your response..." autocomplete="off">
                         <button id="send-btn" aria-label="Send">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="22" y1="2" x2="11" y2="13"></line>
                                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                             </svg>
@@ -87,14 +114,25 @@
         </section>
 
         <footer>
-            <div class="footer-content">
-                <div class="footer-logo">⚡ ALPHAREACH</div>
+            <div class="footer-top">
+                <div class="logo">⚡ <span>ALPHAREACH</span></div>
                 <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <div class="f-column">
+                        <h4>Platform</h4>
+                        <a href="#">Framework</a>
+                        <a href="#">Security</a>
+                        <a href="#">Performance</a>
+                    </div>
+                    <div class="f-column">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Case Studies</a>
+                        <a href="#">Privacy</a>
+                    </div>
                 </div>
             </div>
-            <p class="copyright">&copy; 2026 AlphaReach AI Strategy. All rights reserved.</p>
+            <p class="text-low" style="font-size: 0.8rem;">&copy; 2026 AlphaReach Strategy. Built for the future of B2B.
+            </p>
         </footer>
     </div>
 
@@ -103,9 +141,8 @@
         <div class="modal-content">
             <div class="success-icon">✓</div>
             <h2>Onboarding Initiated</h2>
-            <p>Our system is currently running a preliminary infrastructure audit on your website. You will receive your
-                custom AI Roadmap via email shortly.</p>
-            <button onclick="location.reload()">Back to Home</button>
+            <p>Your data has been sent to the execution layer. Our system is running a tech-stack audit now.</p>
+            <button onclick="location.reload()" class="btn-p" style="padding: 0.8rem 2rem;">Back to Main</button>
         </div>
     </div>
 
