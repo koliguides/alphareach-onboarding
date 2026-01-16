@@ -118,12 +118,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function completeOnboarding() {
+    async function completeOnboarding() {
         const typing = showTyping();
-        setTimeout(() => {
+
+        try {
+            const response = await fetch('/api/process_onboarding', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(onboardData)
+            });
+
+            const result = await response.json();
+            console.log("Process Result:", result);
+
             typing.remove();
             successModal.style.display = 'flex';
-        }, 2000);
+        } catch (error) {
+            console.error("Failed to process onboarding:", error);
+            typing.remove();
+            addMessage("There was an error processing your audit. Please try again or contact support.");
+        }
     }
 
     sendBtn.addEventListener('click', handleUserInput);
