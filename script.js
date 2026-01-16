@@ -180,3 +180,113 @@ userInput.addEventListener('keypress', (e) => {
 window.onload = () => {
     nextQuestion();
 };
+
+// --- Workflow Templates Logic ---
+const workflowData = {
+    "gen_wf": {
+        title: "Generative Workflow Architecture",
+        desc: "Autonomous LLM chains that execute business processes from input to multi-channel export.",
+        image: "images/gen_wf.png",
+        steps: [
+            { h: "Step 1: Data Ingestion", p: "Scraping and cleaning raw unstructured business data." },
+            { h: "Step 2: Clustering", p: "LLM-driven categorization of data into actionable high-intent segments." },
+            { h: "Step 3: Synthesis", p: "Generating custom assets (copy, reports, creative) based on segments." },
+            { h: "Step 4: Quality Gate", p: "Self-correcting AI layer verifying output against brand guidelines." }
+        ]
+    },
+    "models_wf": {
+        title: "Proprietary Model Pipeline",
+        desc: "Tailoring open-source architectures to your specific domain expertise using LoRA and fine-tuning.",
+        image: "images/models_wf.png",
+        steps: [
+            { h: "Stage 1: Base Selection", p: "Selecting Llama 3 or Mistral based on tokens and latency needs." },
+            { h: "Stage 2: Synthetic Data", p: "Generating high-quality training pairs using teacher models." },
+            { h: "Stage 3: Fine-Tuning", p: "Executing Low-Rank Adaptation (LoRA) on enterprise hardware." },
+            { h: "Stage 4: Deployment", p: "Quantized hosting for 10x faster inference at 90% lower cost." }
+        ]
+    },
+    "agents_wf": {
+        title: "Autonomous Agent Core",
+        desc: "Sophisticated agents equipped with memory, planning, and executive tool access.",
+        image: "images/agents_wf.png",
+        steps: [
+            { h: "Perception", p: "Agent detects triggers in Slack, Email, or CRM dashboards." },
+            { h: "Reasoning", p: "Breaking down complex tasks into sub-goals using Chain-of-Thought." },
+            { h: "Action", p: "Calling external APIs (Stripe, Zapier, GitHub) to execute the plan." },
+            { h: "Reflection", p: "Storing the outcome in long-term vector memory for future optimization." }
+        ]
+    },
+    "alpha_wf": {
+        title: "Alpha Stack Framework",
+        desc: "Our 4-layer proprietary growth stack for high-performance B2B scaling.",
+        image: "images/alpha_wf.png",
+        steps: [
+            { h: "Layer 1: Unified Data", p: "Centralizing all business signals into a single source of truth." },
+            { h: "Layer 2: Intelligence", p: "Applying AI models to predict churn and identify high-LTV leads." },
+            { h: "Layer 3: Automation", p: "Hard-coding deterministic paths for routine operations." },
+            { h: "Layer 4: Scaling", p: "Unlocking recursive loops that grow without increasing headcount." }
+        ]
+    },
+    "outreach_wf": {
+        title: "High-Performance Outreach",
+        desc: "AI-personalized outreach that achieves 80%+ open rates and 10%+ booking rates.",
+        image: "images/outreach_wf.png",
+        steps: [
+            { h: "Mining", p: "Identifying decision-makers using Sales Navigator and Apollo." },
+            { h: "Personalization", p: "Scanning their recent posts and company news for AI-hooks." },
+            { h: "Dispatch", p: "Multi-channel sequence (LinkedIn -> Email -> Twitter)." },
+            { h: "Optimization", p: "A/B testing subject lines and hooks automatically via AI analysis." }
+        ]
+    }
+};
+
+const workflowModal = document.getElementById('workflow-modal');
+const closeWorkflow = document.getElementById('close-workflow');
+const bentoCards = document.querySelectorAll('.bento-card');
+
+function openWorkflow(id) {
+    const data = workflowData[id];
+    if (!data) return;
+
+    document.getElementById('workflow-img').src = data.image;
+    document.getElementById('workflow-title').innerText = data.title;
+    document.getElementById('workflow-desc').innerText = data.desc;
+    
+    const stepsContainer = document.getElementById('workflow-steps');
+    stepsContainer.innerHTML = '';
+    
+    data.steps.forEach(step => {
+        const card = document.createElement('div');
+        card.className = 'step-card';
+        card.innerHTML = `<h4>${step.h}</h4><p>${step.p}</p>`;
+        stepsContainer.appendChild(card);
+    });
+
+    workflowModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+bentoCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const id = card.getAttribute('data-workflow');
+        if (id) openWorkflow(id);
+    });
+});
+
+closeWorkflow.addEventListener('click', () => {
+    workflowModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === workflowModal) {
+        workflowModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+document.getElementById('modal-cta').addEventListener('click', () => {
+    workflowModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    document.getElementById('onboarding').scrollIntoView({ behavior: 'smooth' });
+});
